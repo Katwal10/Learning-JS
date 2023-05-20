@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body{
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #form-container{
+            background-color: white;
+            padding: 50px;
+            text-align: center;
+        }
+        h2{
+            margin: 0px 0px 10px 0px;
+        }
+        input{
+            height: 30px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        input[type="submit"]{
+            width: 210px;
+            background-color: #3498db;
+            border: 0px;
+            color: white;
+        }
+        .errors{
+            color: red;
+            margin: 0px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <h2>Login</h2>
+        <form action="" onsubmit="return validateForm()">
+
+            <input type="text" placeholder="Username" id="username" ><br>
+            <p class="errors" id="username-error"></p>
+            
+            <input type="password" placeholder="Password" id="password1" ><br>
+            <p class="errors" id="password1-error"></p>
+            
+            <input type="password" placeholder="Confirm Password" id="password2" ><br>
+            <p class="errors" id="password2-error"></p>
+            
+            <input type="submit" id="submit_btn">
+        </form>
+    </div>
+
+    <script>
+        let username= document.getElementById("username")
+        let password1= document.getElementById("password1")
+        let password2= document.getElementById("password2")
+        let flag= 1;
+
+        function validateForm(){
+
+            if (username.value== "") {
+               document.getElementById("username-error").innerHTML= "Username is empty."
+               flag=0;
+            }else if(username.value.length<3){
+                document.getElementById("username-error").innerHTML= "Username must have min 3 chars."
+                flag=0;
+            }else{
+                document.getElementById("username-error").innerHTML= ""
+                flag=1;
+            }
+
+            if (password1.value== "") {
+               document.getElementById("password1-error").innerHTML= "Password is empty."
+               flag=0;
+            }else if(password1.value.length<4){
+                document.getElementById("password1-error").innerHTML= "Password too short."
+                flag=0;
+            }else{
+                document.getElementById("password1-error").innerHTML= ""
+                flag=1;
+            }
+
+            if (password2.value != password1.value) {
+               document.getElementById("password2-error").innerHTML= "Passwords didn't matched."
+               flag=0;
+            }else if(password2.value==""){
+                document.getElementById("password2-error").innerHTML= "Password is empty."
+                flag=0;
+            }else{
+                document.getElementById("password2-error").innerHTML= ""
+                flag=1;
+            }
+
+            if (flag) {
+                return true;
+            }else{
+                return false;
+            }
+
+
+        }
+
+    </script>
+</body>
+</html>

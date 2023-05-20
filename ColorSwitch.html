@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorSwitch</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #buttons{
+            border: 2px solid slategrey;
+            background-color: black;
+        }
+        .boxes{
+            height: 80px;
+            width: 80px;
+            border: 1px solid white;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 25px;
+            margin: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="buttons">
+       <button onclick="colorSwitch('red')" class="boxes" style="background-color: red;">Red</button>
+       <button onclick="colorSwitch('yellow')" class="boxes" style="background-color: yellow;">Yellow</button>
+       <button onclick="colorSwitch('green')" class="boxes" style="background-color: green;">Green</button>
+       <button onclick="colorSwitch('blue')" class="boxes" style="background-color: blue;">Blue</button>
+    </div>
+
+    <script>
+
+        function colorSwitch(color){
+            document.body.style.background= color;
+        }
+
+    </script>
+
+
+</body>
+</html>

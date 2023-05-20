@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light-Bulb</title>
+    <style>
+        p{
+          text-align: center;
+        }
+        #switch-box{
+            height: 120px;
+            width: 65px; 
+            border: 1.5px solid black;
+            margin: -30% 0% 0% 70%;
+        }
+        .switches{
+            height: 48px;
+            width: 50px; 
+            border: 1.5px solid black;
+            margin: 6px;
+            background-color: azure;
+        }
+        .switches:hover{
+            cursor: grab;
+        }
+    </style>
+</head>
+<body>
+    <!-- Draw bulbs yourself from Figma/Illustrator. Single Bulb with ON and OFF switch. 
+    Sound effect of switch while clicking the switch with states logged in console.-->
+
+    <img id="img" height="auto" style="margin-top: -10px;" src="Bulb-OFF.jpg">
+
+    <div id="switch-box" style= " background-color: red; height: 120px; width: 65px; border: 1.5px solid black;">
+    <div class="switches" id="switch-off" value="off" onclick="switchOFF()"><p>OFF</p></div>
+    <div class="switches" id="switch-on" value="on" onclick="switchON()"><p>ON</p></div>  
+    </div>
+
+    <script>
+        function switchOFF(){
+            document.getElementById('img').src='/Bulb-OFF.jpg'
+            console.log("Off");
+        }
+        function switchON(){
+            document.getElementById('img').src='/Bulb-ON.jpg'
+            console.log("On");
+        }       
+    </script>
+
+</body>
+</html>

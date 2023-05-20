@@ -1,0 +1,133 @@
+<script>
+   
+    function Creature(ls){
+       this.lifespan= ls;
+    }
+
+
+   function Person(Fname,Lname,adrs,age){
+      this.firstname= Fname;
+      this.lastname= Lname;
+      this.address= adrs;
+      this.age= age;
+   }
+
+   Person.prototype.fullname = function(){
+      console.log(this.firstname + " " + this.lastname);
+   }
+
+   Person.prototype.__proto__= Creature.prototype;
+
+   if (Person.age>100) {
+    this.lifespan= "alive";
+   }else{
+    this.lifespan= "dead";
+   }
+
+   let person0= new Person("Ayush","Katwal","KTM",21)
+   let person2= new Person("Yash","Karki","BRT",19)
+   let person3= new Person("Ram","Thapa","POK",23)
+
+   console.log(person0);
+   console.log(person2);
+   console.log(person3);   
+   
+  
+
+
+   //......................................................
+   //ES6-Class and Object   
+
+   class employee{
+      constructor(n){
+         this.name= n;
+      }
+
+      msg(){
+         console.log("Hello");
+      }
+
+      static notify(){
+         alert("No error found!");
+      }
+   }
+
+   class manager extends employee{
+      constructor(n,d){
+         super(n);
+         this.department=d;
+      }
+
+      msg(){
+         console.log("Hola");
+      }
+
+      info(){
+         super.msg();
+         console.log(this.name + " works in a " + this.department + " section. And his age is " + this.age +".");
+      }
+
+   }
+
+   class admin extends manager{
+      #age= "";            //defining private property
+      constructor(n,d,a){
+         super(n,d);
+         this.#age= a;    //private property
+      }
+   }
+
+   class students extends admin{
+      constructor(n,d,a,x,b){
+         super(n,d,a)
+         this.rollno= x;
+         this.section= b;
+      }
+
+      #present(){
+         console.log("Student present.");
+      }
+
+      absent(){
+         this.#present();
+      }
+   }          
+
+   let person1= new students("Ayush","Web Development",22,10,"C");
+   //console.log(person1.absent());
+   person1.absent();
+
+
+//Mixin
+
+let methods= {
+
+   sayHi(){
+      console.log("Namaste");
+   },
+
+   sayBye(){
+      console.log("Bye");
+   }
+
+};
+
+class user{
+   constructor(){
+      this.name= "Ayush"
+   }
+}
+
+class admin extends user{
+   
+}
+
+Object.assign(user.prototype, methods);  //mixin syntax
+
+let admin1= new user();
+console.log(admin1.name);
+admin1.sayHi();
+
+
+
+</script>

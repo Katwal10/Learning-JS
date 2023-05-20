@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        #container{
+            display: inline-block;
+        }
+        input{
+            width: 100px;
+        }
+        #output{
+            border: 1px solid black;
+            width: 100px;
+            height: 20px;
+            float: right;
+        }
+        /*#btn{
+            height: 25px;
+            width: 50px;
+            background-color: black;
+            color: white;
+        }*/
+    </style>
+</head>
+
+<body>
+    
+    <!--       <div id="container">
+        <h2>Convert km to m:</h2><br>
+        <br>
+        <input id="m" type="number"> =  <div id="output"></div><br>
+        <br>
+        <button onclick="calc()" id="btn">Convert</button>
+    </div>    -->                                           
+
+    
+
+
+    <script>
+        /*
+        let m= document.getElementById("m");
+        let km= document.getElementById("output");
+
+        calc=()=>{
+            document.getElementById("output").innerHTML= m.value*1000;
+        }    */     
+
+        //Avaerage calculator
+        
+        let marks=[1,2,3,4,5,6];
+        let sum= 0;
+
+        for (let i = 0; i < marks.length; i++) {
+            sum= sum+ marks[i]
+        }
+
+        average=()=>{
+            console.log(sum/marks.length);
+        }
+        average();               
+
+
+        //Distance calculator.
+
+        /*
+        document.write("<h2>Convert km to m.</h2><br>");
+
+        let x= prompt('Enter a number:')
+
+        calc=()=>{
+            result= x*1000;
+            document.write(`${x}km= ${result}m.`);
+        }
+        calc();         */
+
+
+
+
+        
+
+        
+
+        
+
+         </script>
+    </body>
+</html>
